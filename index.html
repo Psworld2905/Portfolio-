@@ -1,162 +1,474 @@
 <!DOCTYPE html>
-<html>
-    <head>
-      <title>
-         my Portfolio
-      </title>
-      <link rel="icon" type="image/x-icon" href="logo.png">
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-     <div class="header" id="menu">
-        <img src="logo.png" width="70px" height="70px" style="padding: 10px;">
-        <h1 style="color: white; text-shadow: 1px 2px 5px rgb(3, 3, 3), 0px 0px 10px white;">Welcome to my Portfolio</h1>
-        <ul>
-            <li><a href="#home" .>Home</a></li>
-            <li><a href="#aboutme" .>About Me</a></li>
-            <li><a href="#skills" .>Skills</a></li>
-            <li><a href="#portfolio" .>Projects</a></li>
-            <li><a href="#contact" .>Contact</a></li>
-        </ul>
-        
-     </div>
-     <div class="home" id="home" >
-        <div class="details" .>
-            <h1 style="color: white; text-shadow: 1px 2px 5px rgb(3, 3, 3),1px 2px 30px rgb(235, 163, 224); font-size: 120px;font-family: Edwardian Script ITC;">Full Stack Developer</h1><br><br>
-            <p style="color: white; text-shadow: 1px 2px 5px rgb(3, 3, 3), 0px 0px 10px white;font-size: 30px;">Iam <span style="font-size: 50px;font-weight: 900; color: rgb(235, 247, 9);text-shadow: 1px 2px 5px rgb(229, 27, 71);">Pavan Sai Puli</span>,<br> a Full Stack Developer </p><br>
-            <button style="width: 150px;height: 50px;margin-left: 100px;"><a href="mailto:pulipavansai9@gmail.com">Contact Me</a></button>
-        </div>
-        <div class="img-container">
-         <img src="p1.png" style="z-index: 3; margin-right: 100px; margin-bottom:-45px;">
-        </div>
-     </div>
-     <div class="aboutme" id="aboutme" >
-      <div . style="width: 100px;">
-         <h1 style="margin-top:80px ; padding: 10px; font-size: 50px; color: white; text-shadow: 2px 3px 2px rgb(160, 157, 140); width:300px;"> About Me</h1> 
-         
-            <p style="width: 900px;padding: 20px;font-size: 25px; text-align: justify;color: rgb(248, 240, 8); text-shadow: 0px 0px 3px white;">Hello! I'm Puli Pavan Sai, a passionate developer from Andhra Pradesh, India. 
-            I have completed internships in web development at Thoughtwave and VnurtureIT Training & Placement Institute, gaining valuable skills in technologies like HTML, CSS, JavaScript, Angular, React, PHP, SQL, and Oracle. Additionally,
-                I have experience with Microsoft Office, Figma, and WordPress, and enjoy working with AI and business intelligence tools.                  I also train students in web development and Java. I enjoy reading, photography, designing, and gaming in my free time.
-                Currently, I'm working as a Java Intern at Thoughtwave Software and Solution Inc., where I'm learning Full Stack Java and have completed projects like building websites for U.S. Professional Group and Govt. Degree College, Avanigadda.
-            </p>
-                <h1 style="margin-top:10px ; font-size: 40px; color: white; text-shadow: 2px 3px 2px rgb(160, 157, 140); width:300px;">Experience</h1>
-            <p style="width: 900px; color: white;padding: 20px; font-size: 20px;">
-               . I have completed my 2 months internship in the "VnurtureIT Institution and Traning" and I have completed my 3 months internship in "Thoughtwave info systems pvt ltd".<br>
-                . I have completed my 3 month’s semester Internship on Web Development, in Thoughtwave Software and Solution Inc.
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Puli Pavan Sai | Full Stack Java Developer</title>
+  <meta name="description" content="Puli Pavan Sai — Java Full Stack Developer (Java, Spring Boot, Angular, React, Next.js, MySQL) with 2+ years building enterprise HRMS and ATS platforms at SwarmHR.">
+  <meta name="author" content="Puli Pavan Sai">
+  <meta property="og:title" content="Puli Pavan Sai | Full Stack Java Developer">
+  <meta property="og:description" content="Java · Spring Boot · Angular · React · Next.js — enterprise HR platforms and fast, production-grade web builds.">
+  <meta property="og:image" content="p2.png">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // Light mode by default; remembers the visitor's choice
+    (function () {
+      var t = 'light';
+      try { t = localStorage.getItem('theme') || 'light'; } catch (e) {}
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+<body>
 
-                
-            </p>
+  <!-- Floating background orbs -->
+  <div class="orbs" aria-hidden="true">
+    <span class="orb o1"></span><span class="orb o2"></span><span class="orb o3"></span>
+    <span class="orb o4"></span><span class="orb o5"></span><span class="orb o6"></span>
+  </div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="#home" class="brand" aria-label="Home">
+        <span class="brand-mark">PS</span>
+        <span class="brand-name">Pavan Sai</span>
+      </a>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark / light mode">
+          <svg class="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v3M12 19.5v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1.5 12h3M19.5 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact" class="btn btn-sm btn-primary">Hire Me</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow"><span class="dot"></span> Open to new opportunities</p>
+          <h1>Hi, I'm <span class="accent">Puli Pavan Sai</span></h1>
+          <h2 class="role">Java Full Stack Developer</h2>
+          <p class="lead">
+            I design and build enterprise HRMS and ATS applications with <strong>Java, Spring Boot, Angular,
+            React</strong> and <strong>Next.js</strong> at SwarmHR. My focus is reliable REST APIs, responsive
+            interfaces and clean, scalable code.
+          </p>
+          <div class="hero-stats">
+            <div class="stat"><span class="num" data-count="2" data-suffix="+">0</span><span class="label">Years of experience</span></div>
+            <div class="stat"><span class="num" data-count="5" data-suffix="">0</span><span class="label">Live projects</span></div>
           </div>
-         <div class="img2">
-            <img src="p2.png" style="margin-left:-40px ;margin-top:-10px; height: 750px;">
-         </div>        
-     </div>
-     <div class="skills" id="skills" >
-      <div  style="width: 300px;">
-         <h1 style="margin-top:80px ; padding: 10px; font-size: 50px; color: white; text-shadow: 2px 3px 2px rgb(160, 157, 140);"> My Skills</h1>
+          <div class="hero-actions">
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">View My Work</a>
+            <a href="Puli_Pavan_Sai_Resume.pdf" class="btn btn-ghost" download>Download Resume</a>
+          </div>
+          <div class="socials">
+            <a href="https://www.linkedin.com/in/puli-pavan-sai-1b9271253/" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.5c0-1.3-.02-3-1.83-3-1.83 0-2.12 1.43-2.12 2.9V21H9z"/></svg>
+            </a>
+            <a href="https://github.com/psworld2905" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg viewBox="0 0 24 24"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.4c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.7 5.38-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>
+            </a>
+            <a href="mailto:pulipavansai9@gmail.com" aria-label="Email">
+              <svg viewBox="0 0 24 24"><path d="M2 5h20v14H2zm2 2v.4l8 5.2 8-5.2V7zm16 2.8-8 5.2-8-5.2V17h16z"/></svg>
+            </a>
+          </div>
+        </div>
+        </div>
+        <div class="hero-visual">
+          <div class="photo-ring">
+            <div class="photo-inner"><img src="p2.png" alt="Portrait of Puli Pavan Sai"></div>
+          </div>
+          <div class="float-card fc-1"><i></i> Java · Spring Boot</div>
+          <div class="float-card fc-2"><i></i> Angular → Next.js</div>
+          <div class="float-card fc-3"><i></i> 2+ yrs @ SwarmHR</div>
+        </div>
       </div>
-      <div class="skills-box">
-         <div class="skill-1">
-            <img src="html.png" width="90px" height="90px" style="border-radius: 20px;">
-         </div>
-         <div class="skill-2">
-            <img src="css.png" width="90px" height="90px" style="border-radius: 20px;">
-         </div>
-         <div class="skill-3">
-            <img src="js.png" width="90px" height="90px" style="border-radius: 20px;">
-         </div>
-         <div class="skill-4">
-            <img src="php.png"width="90px" height="90px" style="border-radius: 20px;">
-         </div>
-         <div class="skill-5">
-            <img src="sql.png" width="90px" height="90px" style="border-radius: 20px;">
-         </div>
-         <div class="skill-6">
-            <img src="WordPress_blue_logo.svg.png"width="90px" height="90px" style="border-radius: 20px;">
-         </div>
-         <div class="skill-7">
-            <img src="ms.png"width="90px" height="90px" style="border-radius: 20px;">
-         </div>
-         <div class="skill-8">
-            <img src="c.png"width="90px" height="90px" style="border-radius: 20px;">
-         </div>
-         <div class="skill-9">
-            <img src="java.jpg" width="90px" height="90px" style="border-radius: 20px;">
-         </div>
-         <div class="skill-10">
-            <img src="ps.png"width="90px" height="90px" style="border-radius: 20px;">
-         </div>    
-       </div><br>
-       <div class="hardware-skills">
-         <h2 style="color: white;padding: 10px;font-size: 30px;">Hardware-Skills :</h2><br>
-           <div class="points">
-            <li>Knowledgeable in the driver installation and updates for various devices. </li>
-            <li>Knowledge about the windows and Linux software installation.</li>
-         </div>
-       </div>
-     </div>
-     <div class="portfolio" id="portfolio" >
-      <div . style=" width: 300px;">
-         <h1 style="margin-top:80px ; padding: 10px; font-size: 50px; color: white; text-shadow: 2px 3px 2px rgb(160, 157, 140);"> My Projects</h1>
-      </div>
-      <div class="project-box">
-       <div class="project-1">
-         <img src="logo.jpg" width="120px" style="border-radius: 20px;">
-         <h1 style="color: white;">GDC, Avanigadda</h1>
-         <p style="color: rgb(240, 228, 68); padding: 5px; text-align: center; font-weight: 900;">I have create the front page of my college website</p>
-         <button><a href="https://www.gdcavanigadda.ac.in/" style="padding: 5px;">Click Me</a></button>
-       </div>
-       <div class="project-2">
-         <img src="tourist places.jpg" style="border-radius: 20px; width:100px; height:100px;">
-         <h1 style="color: white;">Tourist Places</h1>
-         <p style="color: rgb(240, 228, 68); padding: 5px; text-align: center; font-weight: 900;">I have create a website on "Famous Tourist Places in india"</p>
-         <button><a href="https://psworld2905.github.io/Famous_tourist_places_in_india/" style="padding: 5px;" >Click Me</a></button>
-       </div>
-       <div class="project-3">
-         <img src="visa_matters.png">
-         <h1 style="color: white; text-align:center" >U.S Professional Group </h1>
-         <p style="color: rgb(240, 228, 68); padding: 5px; text-align: center; font-weight: 900;">I have developed the "U.S Profesional Group" website</p>
-         <button><a href="https://visamatters.com/" style="padding: 5px;">Click Me</a></button>
-       </div>
-      
-     </div>
-     </div>
-     
-     <div class="contact" id="contact">
-        <h1  . style="margin-top:80px ; padding: 10px; font-size: 50px; color: white; text-shadow: 2px 3px 2px rgb(160, 157, 140); width: 300px;">contact Us</h1>
-        <div class="form-container">
-         <form id="contact-form">  
-            
-             <div class="form-group">
-                 <label for="name">Name:</label>
-                 <input type="text" id="name" name="name" required>
-             </div>
-             <div class="form-group">
-                 <label for="email">Email:</label>
-                 <input type="email" id="email" name="email" required>
-             </div>
-             <div class="form-group">
-                 <label for="message">Message:</label>
-                 <textarea id="message" name="message" rows="5" required></textarea>
-             </div>
-             <button type="submit" id="submit" style="display: block;width: 100%; ">Send</button>
-         </form>
-     </div>
+    </section>
 
-     <footer>
-      <p style="color: gold;">&copy; 2024 Pavan Sai Puli. All rights reserved.</p>
+    <!-- ============ ABOUT ============ -->
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="reveal">
+          <p class="section-tag">About me</p>
+          <h2 class="section-title">Building scalable, secure full-stack systems</h2>
+        </div>
+        <div class="about-text reveal">
+          <p>
+            I'm a Java Full Stack Developer with <strong>2+ years</strong> of experience designing,
+            developing and maintaining enterprise web applications with Java, Spring Boot, Angular, React.js,
+            Next.js, TypeScript and MySQL. At <strong>SwarmHR</strong> I work on HRMS and ATS platforms,
+            covering employee management, payroll, attendance, timesheets, leave, probation and goal management.
+          </p>
+          <p>
+            I helped migrate Angular modules to <strong>Next.js</strong> while keeping the existing business
+            logic and API integrations intact. I've built third-party integrations with
+            <strong>Google Calendar, Gmail and Outlook</strong>, plus <strong>AI-powered goal-plan drafting</strong>.
+            I care about performance, code quality, testing and solutions that hold up in production.
+          </p>
+          <ul class="about-facts">
+            <li><span>Location</span> Hyderabad, Telangana</li>
+            <li><span>Role</span> Java Developer @ SwarmHR</li>
+            <li><span>Experience</span> 2+ years · HRMS &amp; ATS</li>
+            <li><span>Languages</span> English, Telugu</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="section alt" id="experience">
+      <div class="container">
+        <div class="reveal">
+          <p class="section-tag">Experience</p>
+          <h2 class="section-title">Where I've worked</h2>
+        </div>
+
+        <div class="timeline">
+          <article class="tl-item reveal">
+            <div class="tl-dot"></div>
+            <div class="tl-card expandable open">
+              <button class="tl-head toggle" aria-expanded="true">
+                <span class="tl-title">
+                  <h3>Java Developer</h3>
+                  <span class="company">SwarmHR · Hyderabad · Full-time, On-site</span>
+                </span>
+                <span class="tl-right">
+                  <span class="date">Nov 2024 – Present</span>
+                  <span class="chev" aria-hidden="true"></span>
+                </span>
+              </button>
+              <p class="tl-summary">I build HRMS modules and the ATS with Spring Boot, Angular and Next.js, including calendar and email integrations and AI goal planning.</p>
+              <div class="tags">
+                <span>Java</span><span>Spring Boot</span><span>Angular</span><span>Next.js</span><span>TypeScript</span><span>MySQL</span><span>Microservices</span><span>Solr</span>
+              </div>
+
+              <div class="collapse"><div class="collapse-inner">
+              <div class="sub-role">
+                <h4>SwarmHR: Workforce Automation &amp; Resource Management</h4>
+                <ul>
+                  <li>Developed and maintained features across employee management, attendance, timesheets, leave, payroll, onboarding, probation, performance evaluation, exit and goal management.</li>
+                  <li>Integrated Spring Boot REST APIs with frontend components to support HR workflows and data exchange between modules.</li>
+                  <li>Migrated Angular modules to Next.js while keeping existing API integrations and business logic intact.</li>
+                  <li>Integrated Google Calendar, Gmail and Outlook into meeting scheduling and related workflows.</li>
+                  <li>Implemented and tested AI-assisted goal-plan drafting, including its validation and UI.</li>
+                  <li>Shipped responsive UI improvements and fixed form validation, pagination, sorting and layout issues on desktop and mobile.</li>
+                </ul>
+              </div>
+
+              <div class="sub-role">
+                <h4>ATS (Applicant Tracking System) &amp; Core Modules <span class="date-sm">Nov 2024 – Jun 2025</span></h4>
+                <ul>
+                  <li>Built and maintained features for recruitment and HR workflows.</li>
+                  <li>Built REST API functionality between Spring Boot services and Angular components, and used SQL for data handling.</li>
+                  <li>Added filtering, pagination, sorting and form validation to the UI.</li>
+                  <li>Tested API responses, investigated defects and took part in sprint delivery, code reviews and regression testing.</li>
+                </ul>
+              </div>
+              </div></div>
+            </div>
+          </article>
+
+          <article class="tl-item reveal">
+            <div class="tl-dot"></div>
+            <div class="tl-card expandable">
+              <button class="tl-head toggle" aria-expanded="false">
+                <span class="tl-title">
+                  <h3>Full-Stack Developer (Freelance)</h3>
+                  <span class="company">Ritu Broadband · Independent client project</span>
+                </span>
+                <span class="tl-right">
+                  <span class="date">2025</span>
+                  <span class="chev" aria-hidden="true"></span>
+                </span>
+              </button>
+              <p class="tl-summary">I built and launched a business website with Razorpay online payments, solo and end to end.</p>
+              <div class="tags"><span>React.js</span><span>PHP</span><span>Bootstrap</span><span>Razorpay</span></div>
+              <div class="collapse"><div class="collapse-inner">
+                <ul>
+                  <li>Designed, developed and deployed a business website for a broadband provider as a paid client project.</li>
+                  <li>Handled requirements, development and live deployment using React.js, Bootstrap and PHP.</li>
+                  <li>Integrated the Razorpay payment gateway into the React.js frontend for secure, reliable online payments.</li>
+                  <li>Used AI tools to speed up coding and debugging, checking every generated change myself.</li>
+                </ul>
+              </div></div>
+            </div>
+          </article>
+
+          <article class="tl-item reveal">
+            <div class="tl-dot"></div>
+            <div class="tl-card expandable">
+              <button class="tl-head toggle" aria-expanded="false">
+                <span class="tl-title">
+                  <h3>Java Developer Intern</h3>
+                  <span class="company">Thoughtwave Software Solutions · Hyderabad · Internship</span>
+                </span>
+                <span class="tl-right">
+                  <span class="date">Jul 2024 – Oct 2024</span>
+                  <span class="chev" aria-hidden="true"></span>
+                </span>
+              </button>
+              <p class="tl-summary">I worked on HR application features and REST APIs under senior developer guidance.</p>
+              <div class="tags"><span>Java</span><span>Angular</span><span>REST</span><span>Git</span><span>Agile</span></div>
+              <div class="collapse"><div class="collapse-inner">
+                <ul>
+                  <li>Contributed to real HR application features using Java, Angular and web technologies.</li>
+                  <li>Helped develop and test REST APIs and UI components under senior developer guidance.</li>
+                  <li>Worked in Git-based workflows following Agile practices.</li>
+                </ul>
+              </div></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="reveal">
+          <p class="section-tag">Projects</p>
+          <h2 class="section-title">Selected work</h2>
+        </div>
+
+        <!-- Featured -->
+        <article class="featured reveal expandable p-exp">
+          <div class="featured-body">
+            <span class="badge">Enterprise HRMS · Production</span>
+            <h3>SwarmHR (Angular)</h3>
+            <div class="collapse"><div class="collapse-inner">
+            <p>
+              The production SwarmHR platform for workforce automation and resource management. I build and
+              maintain core HR modules: Spring Boot REST APIs on the backend, Angular on the frontend, plus
+              Google Calendar, Gmail and Outlook scheduling and AI-assisted goal-plan drafting.
+            </p>
+            <ul class="module-list">
+              <li>Employee Mgmt</li><li>Attendance</li><li>Timesheets</li><li>Leave</li><li>Payroll</li>
+              <li>Onboarding</li><li>Probation</li><li>Performance</li><li>Goals</li><li>Exit</li>
+            </ul>
+            <div class="tags"><span>Java</span><span>Spring Boot</span><span>Angular</span><span>MySQL</span><span>Solr</span><span>Google APIs</span></div>
+            </div></div>
+            <div class="project-links">
+              <button class="p-toggle toggle" aria-expanded="false">Details <span class="chev" aria-hidden="true"></span></button>
+              <a href="https://app.swarmhr.com/#/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Open live app ↗</a>
+              <span class="login-note">🔒 Enterprise login required</span>
+            </div>
+          </div>
+          <div class="featured-visual" aria-hidden="true">
+            <div class="mock">
+              <div class="mock-bar"><i></i><i></i><i></i></div>
+              <div class="mock-body">
+                <div class="mock-side"><b></b><b></b><b></b><b></b><b></b></div>
+                <div class="mock-main">
+                  <div class="mock-row"><s></s><s></s><s></s></div>
+                  <div class="mock-chart"><em style="height:40%"></em><em style="height:65%"></em><em style="height:50%"></em><em style="height:85%"></em><em style="height:70%"></em><em style="height:95%"></em></div>
+                  <div class="mock-line"></div><div class="mock-line short"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <div class="project-grid">
+          <article class="project reveal expandable p-exp">
+            <div class="project-top">
+              <span class="project-icon">N</span>
+              <span class="badge">Migration · Production</span>
+            </div>
+            <h3>SwarmHR (Next.js)</h3>
+            <div class="collapse"><div class="collapse-inner">
+            <p>The next generation of SwarmHR. I helped migrate Angular modules to Next.js while keeping existing business logic and API integrations intact, for better performance and SEO.</p>
+            <div class="tags"><span>Next.js</span><span>React</span><span>TypeScript</span><span>REST APIs</span></div>
+            </div></div>
+            <div class="project-links">
+              <button class="p-toggle toggle" aria-expanded="false">Details <span class="chev" aria-hidden="true"></span></button>
+              <a href="https://swarmhr-nextjs-prod-758948365918.us-central1.run.app/login" target="_blank" rel="noopener" class="link-arrow">Open live app</a>
+              <span class="login-note">🔒 Login</span>
+            </div>
+          </article>
+
+          <article class="project reveal expandable p-exp">
+            <div class="project-top">
+              <span class="project-icon">A</span>
+              <span class="badge">Recruitment · Production</span>
+            </div>
+            <h3>SwarmHR ATS</h3>
+            <div class="collapse"><div class="collapse-inner">
+            <p>An Applicant Tracking System for recruitment workflows. I built Spring Boot APIs, wired them to Angular components, and added filtering, pagination, sorting and form validation.</p>
+            <div class="tags"><span>Spring Boot</span><span>Angular</span><span>SQL</span><span>REST APIs</span></div>
+            </div></div>
+            <div class="project-links">
+              <button class="p-toggle toggle" aria-expanded="false">Details <span class="chev" aria-hidden="true"></span></button>
+              <a href="https://atsapp.swarmhr.com/#/login" target="_blank" rel="noopener" class="link-arrow">Open live app</a>
+              <span class="login-note">🔒 Login</span>
+            </div>
+          </article>
+
+          <article class="project reveal expandable p-exp">
+            <div class="project-top">
+              <span class="project-icon">R</span>
+              <span class="badge">Freelance · Live</span>
+            </div>
+            <h3>Ritu Broadband</h3>
+            <div class="collapse"><div class="collapse-inner">
+            <p>A business website for a broadband service provider with Razorpay online payments. I handled everything from requirements to deployment, built with React and PHP.</p>
+            <div class="tags"><span>React.js</span><span>PHP</span><span>Bootstrap</span><span>Razorpay</span></div>
+            </div></div>
+            <div class="project-links">
+              <button class="p-toggle toggle" aria-expanded="false">Details <span class="chev" aria-hidden="true"></span></button>
+              <a href="https://ritubroadband.in" target="_blank" rel="noopener" class="link-arrow">ritubroadband.in</a>
+            </div>
+          </article>
+
+          <article class="project reveal expandable p-exp">
+            <div class="project-top">
+              <img src="logo.jpg" alt="" class="project-logo">
+              <span class="badge">Institution · Live</span>
+            </div>
+            <h3>Govt. Degree College, Avanigadda</h3>
+            <div class="collapse"><div class="collapse-inner">
+            <p>A responsive website for my college, designed and built from scratch as an independent project. It's live in production.</p>
+            <div class="tags"><span>PHP</span><span>JavaScript</span><span>SQL</span><span>HTML/CSS</span></div>
+            </div></div>
+            <div class="project-links">
+              <button class="p-toggle toggle" aria-expanded="false">Details <span class="chev" aria-hidden="true"></span></button>
+              <a href="https://www.gdcavanigadda.ac.in/" target="_blank" rel="noopener" class="link-arrow">gdcavanigadda.ac.in</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="section alt" id="skills">
+      <div class="container">
+        <div class="reveal">
+          <p class="section-tag">Skills</p>
+          <h2 class="section-title">My toolkit</h2>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-card reveal">
+            <div class="skill-icon">{ }</div>
+            <h3>Languages</h3>
+            <div class="chips"><span>Java</span><span>JavaScript</span><span>SQL</span><span>PHP</span><span>HTML</span><span>CSS</span></div>
+          </div>
+          <div class="skill-card reveal">
+            <div class="skill-icon">⚙</div>
+            <h3>Backend</h3>
+            <div class="chips"><span>Spring Boot</span><span>REST APIs</span><span>Microservices</span><span>System Design</span></div>
+          </div>
+          <div class="skill-card reveal">
+            <div class="skill-icon">◧</div>
+            <h3>Frontend</h3>
+            <div class="chips"><span>Angular</span><span>React.js</span><span>Next.js</span><span>TypeScript</span><span>Bootstrap</span></div>
+          </div>
+          <div class="skill-card reveal">
+            <div class="skill-icon">▤</div>
+            <h3>Databases</h3>
+            <div class="chips"><span>MySQL</span><span>Oracle</span><span>Solr</span></div>
+          </div>
+          <div class="skill-card reveal">
+            <div class="skill-icon">☁</div>
+            <h3>Cloud &amp; Tools</h3>
+            <div class="chips"><span>Git</span><span>Docker</span><span>GCP</span><span>Postman</span><span>WordPress</span><span>Microsoft Office</span></div>
+          </div>
+          <div class="skill-card reveal">
+            <div class="skill-icon">✦</div>
+            <h3>AI &amp; Fundamentals</h3>
+            <div class="chips"><span>Claude Code</span><span>Prompt Engineering</span><span>Microsoft BI &amp; AI</span><span>DSA</span></div>
+          </div>
+        </div>
+
+        <div class="ai-edge reveal">
+          <div>
+            <p class="section-tag">AI &amp; productivity edge</p>
+            <h3>AI-assisted development, always validated</h3>
+          </div>
+          <ul>
+            <li>I use prompt engineering to explore solutions, then review generated code against project requirements.</li>
+            <li>I use AI tools such as Claude Code for coding and debugging, and I check every output before it ships.</li>
+            <li>I used AI-assisted development to build and deliver the Ritu Broadband React.js + PHP website.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EDUCATION ============ -->
+    <section class="section" id="education">
+      <div class="container">
+        <div class="reveal">
+          <p class="section-tag">Education</p>
+          <h2 class="section-title">Academic background</h2>
+        </div>
+        <div class="edu-grid">
+          <div class="edu-card reveal">
+            <span class="edu-score">80%</span>
+            <h3>B.Sc Computer Science</h3>
+            <p>Govt. Degree College, Krishna University</p>
+            <span class="date">2021 – 2024</span>
+          </div>
+          <div class="edu-card reveal">
+            <span class="edu-score">96.3%</span>
+            <h3>Intermediate (M.P.C)</h3>
+            <p>VDA Junior College, Gajuwaka</p>
+            <span class="date">2019 – 2021</span>
+          </div>
+          <div class="edu-card reveal">
+            <span class="edu-score">97%</span>
+            <h3>SSC (10th Grade)</h3>
+            <p>Gandhi Vidhyalaya, Machilipatnam</p>
+            <span class="date">2018 – 2019</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section alt" id="contact">
+      <div class="container">
+        <div class="cta-card reveal">
+          <p class="section-tag">Contact</p>
+          <h2 class="cta-title">Let's build something.</h2>
+          <p class="cta-sub">Open to full stack roles and collaborations. Reach out any time.</p>
+          <div class="cta-actions">
+            <a href="mailto:pulipavansai9@gmail.com" class="btn btn-primary btn-lg mono">pulipavansai9@gmail.com</a>
+            <a href="https://www.linkedin.com/in/puli-pavan-sai-1b9271253/" target="_blank" rel="noopener" class="btn btn-ghost btn-lg">LinkedIn ↗</a>
+          </div>
+          <p class="cta-meta">
+            <a href="tel:+919515241011">+91 95152 41011</a>
+            <span>·</span>
+            Hyderabad, Telangana
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Puli Pavan Sai. Built with HTML, CSS &amp; JavaScript.</p>
+      <a href="#home">Back to top ↑</a>
+    </div>
   </footer>
-     </div>
-      <!-- Include EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function(){
-            emailjs.init("t_yNjgtptTt68sPrg"); // Replace with your EmailJS user ID
-        })();
-    </script>
-    <script type="text/javascript" src="contact-form.js"></script>
-    </body>
-    
+
+  <script src="script.js"></script>
+</body>
 </html>
