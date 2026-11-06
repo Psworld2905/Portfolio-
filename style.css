@@ -664,3 +664,30 @@ section[id] { scroll-margin-top: 12px; }
 .hero-stats .stat:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
 .hero-stats .num, .hero-stats .label { position: relative; }
 @media (max-width: 600px) { .hero-stats .stat, .hero-stats .stat:first-child { padding: 10px 14px; } }
+
+/* ============ BIGGER PROFILE PHOTO ============ */
+.photo-ring { width: min(420px, 80vw); padding: 7px; }
+@media (min-width: 961px) { .hero-grid { grid-template-columns: 1.15fr 1fr; } }
+@media (min-width: 961px) and (max-height: 760px) { .photo-ring { width: min(380px, 70vh); } }
+@media (min-width: 961px) and (max-height: 600px) { .photo-ring { width: min(360px, 68vh); } }
+@media (max-width: 960px) { .photo-ring { width: min(320px, 78vw); } }
+
+/* Profile photo (full-background photo: fill the circle, keep the face centered) */
+.photo-inner img {
+  position: absolute; inset: 0; left: 0; bottom: auto; transform: none;
+  width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: 58% 24%;
+}
+/* Zoom slightly and shift so the face (≈60% across the original photo) sits in the middle of the circle */
+.photo-inner img { width: 112%; left: -13%; object-position: 50% 16%; }
+
+/* Cutout portrait (transparent PNG): stand it on the bottom of the circle, face near the centre */
+.photo-inner img {
+  inset: auto; top: auto; bottom: 0; left: 12%;
+  width: auto; height: 112%; max-width: none;
+  object-fit: contain; object-position: bottom; transform: none;
+}
+.photo-inner img {
+  height: 104%; left: 15%;
+  -webkit-mask-image: linear-gradient(to right, #000 80%, transparent 100%);
+          mask-image: linear-gradient(to right, #000 80%, transparent 100%);
+}
