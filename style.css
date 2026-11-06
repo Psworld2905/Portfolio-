@@ -691,3 +691,23 @@ section[id] { scroll-margin-top: 12px; }
   -webkit-mask-image: linear-gradient(to right, #000 80%, transparent 100%);
           mask-image: linear-gradient(to right, #000 80%, transparent 100%);
 }
+
+/* ============ MOBILE FIT FIX ============ */
+/* The spinning ring used to rotate the whole square box, whose corners poked ~40% outside
+   the circle and made the page wider than the phone screen. Now only a clipped
+   gradient layer spins inside the circle, so the box itself never grows. */
+.photo-ring {
+  animation: none; background: none; overflow: hidden; isolation: isolate;
+}
+.photo-ring::before {
+  content: ''; position: absolute; inset: -30%; z-index: -1;
+  background: conic-gradient(from 0deg, var(--accent), var(--gold), var(--purple), var(--accent));
+  animation: spin 12s linear infinite;
+}
+.photo-inner { animation: none; position: relative; z-index: 1; }
+
+/* Safety net: never allow sideways scrolling */
+html, body { max-width: 100%; overflow-x: hidden; }
+@supports (overflow-x: clip) { html, body { overflow-x: clip; } }
+
+@media (prefers-reduced-motion: reduce) { .photo-ring::before { animation: none; } }
