@@ -666,7 +666,7 @@ section[id] { scroll-margin-top: 12px; }
 @media (max-width: 600px) { .hero-stats .stat, .hero-stats .stat:first-child { padding: 10px 14px; } }
 
 /* ============ BIGGER PROFILE PHOTO ============ */
-.photo-ring { width: min(420px, 80vw); padding: 7px; }
+.photo-ring { width: min(380px, 80vw); padding: 7px; }
 @media (min-width: 961px) { .hero-grid { grid-template-columns: 1.15fr 1fr; } }
 @media (min-width: 961px) and (max-height: 760px) { .photo-ring { width: min(380px, 70vh); } }
 @media (min-width: 961px) and (max-height: 600px) { .photo-ring { width: min(360px, 68vh); } }
@@ -680,16 +680,13 @@ section[id] { scroll-margin-top: 12px; }
 /* Zoom slightly and shift so the face (≈60% across the original photo) sits in the middle of the circle */
 .photo-inner img { width: 112%; left: -13%; object-position: 50% 16%; }
 
-/* Cutout portrait (transparent PNG): stand it on the bottom of the circle, face near the centre */
+/* Portrait (pavansai.jpeg, white background): fill the whole circle, face centred */
+.photo-inner { background: #fff; }
 .photo-inner img {
-  inset: auto; top: auto; bottom: 0; left: 12%;
-  width: auto; height: 112%; max-width: none;
-  object-fit: contain; object-position: bottom; transform: none;
-}
-.photo-inner img {
-  height: 104%; left: 15%;
-  -webkit-mask-image: linear-gradient(to right, #000 80%, transparent 100%);
-          mask-image: linear-gradient(to right, #000 80%, transparent 100%);
+  position: absolute; inset: auto; top: auto; bottom: 0; left: 50%; transform: translateX(-50%);
+  width: auto; height: 90%; max-width: none;
+  object-fit: contain; object-position: bottom;
+  -webkit-mask-image: none; mask-image: none;
 }
 
 /* ============ MOBILE FIT FIX ============ */
